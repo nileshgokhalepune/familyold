@@ -3,3 +3,58 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+.container{
+  text-align: center;
+}
+.peers{
+  display: flex!important;
+  flex-direction: row;
+  height: 200px;
+  margin: 1pt;
+  border: 1px solid red;
+}
+.children{
+  display: flex!important;
+  flex-direction: row;
+  height: 200px;
+  margin: 1pt;
+  border: 1px solid green;
+}
+
+.parents{
+  display: flex!important;
+  flex-direction: row;
+  height: 200px;
+  margin: 1pt;
+  border: 1px solid darkblue;
+}
+[type="member"]{
+  width: 100px;
+  height: 100px;
+  margin: 0 10 10 0;
+  border: 1px solid #ff4f8a;
+  border-radius: 50%;
+}
+
+input[type="text"]{
+  width: 200px;
+  border-radius: 10%;
+  border-color: #84BFF0;
+  margin:2px;
+  padding: 2px;
+  font-family: 'Times New Roman', Times, serif
+}
+
+
+input[type="password"]{
+  width: 200px;
+  border-radius: 10%;
+  border-color: #84BFF0;
+  margin:2px;
+  padding: 2px;
+  font-family: 'Times New Roman', Times, serif
+}
+
+label > input {
+  display: inline;
+}
