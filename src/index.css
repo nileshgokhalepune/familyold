@@ -13,11 +13,12 @@ body {
   margin: 1pt;
   border: 1px solid red;
 }
+
 .children{
   display: flex!important;
   flex-direction: row;
   height: 200px;
-  margin: 1pt;
+  margin: 10px;
   border: 1px solid green;
 }
 
@@ -57,4 +58,26 @@ input[type="password"]{
 
 label > input {
   display: inline;
+}
+
+.you{
+  display: table-cell;
+}
+
+.family{
+  left:30vw;
+  height: 100vh;
+  width: 50vw; 
+}
+
+.family-container{
+  display: table;
+}
+
+.underliner{
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
+  font-size: 10px;
+  background-color: darkblue;
+  color:white;
 }

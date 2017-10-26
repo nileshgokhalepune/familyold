@@ -3,12 +3,15 @@ import { Board } from './Board';
 import { Login } from './Login'
 import logo from './logo.svg';
 import './App.css';
+require('../node_modules/font-awesome/css/font-awesome.css');
 
 export class App extends Component {
   componentDidMount() {
     var ticket = window.localStorage.getItem('ticket');
     if (ticket) {
-      this.state.isLoggedIn = true;
+      this.setState({
+        isLoggedIn: true
+      });
     }
   }
 

@@ -2,16 +2,9 @@ import React, { Component } from 'react';
 import { Member } from './Member';
 
 export class Board extends Component {
-  componentDidMount() {
-      
-  }
 
-  constructor(props) {
-    super(props);
-    this.peer = 'peer';
-    this.children = 'child';
-    this.parents = 'parent';
-    this.state = {
+  componentWillMount() {
+    this.setState({
       name: 'N',
       relation: 'Self',
       type: 'self',
@@ -48,7 +41,14 @@ export class Board extends Component {
         relation: 'Aunt',
         type: 'parent'
       }]
-    }
+    });
+  }
+  constructor(props) {
+    super(props);
+    this.peer = 'peer';
+    this.children = 'child';
+    this.parents = 'parent';
+
   }
 
   renderMember(state) {
@@ -56,27 +56,36 @@ export class Board extends Component {
   }
 
   render() {
-    let family = this.state.family;
-    const peers = family.map((f) => {
-      return f.type === this.peer ? <Member value={f} /> : '';
-    });
-    const subordinates = family.map((f) => {
-      return f.type === this.children ? <Member value={f} /> : '';
-    });
-    const parents = family.map((f) => {
-      return f.type === this.parents ? <Member value={f} /> : '';
-    });
+    var peers = null;
+    var subordinates = null;
+    var parents = null;
+    if (this.state) {
+      let family = this.state.family;
+      peers = family.map((f, i) => {
+        return f.type === this.peer ? <Member value={f} key={i} /> : '';
+      });
+      subordinates = family.map((f, i) => {
+        return f.type === this.children ? <Member value={f} key={i} /> : '';
+      });
+      parents = family.map((f, i) => {
+        return f.type === this.parents ? <Member value={f} key={i} /> : '';
+      });
+    }
     return (
-      <div class="container">
-        <div class="parents">
-            {parents}
-        </div>
-        <div class="peers">
+      <div className="family-container">
+        <div className="you">
             {this.renderMember(this.state)}
-            {peers}
         </div>
-        <div class="children">
-            {subordinates}
+        <div className="family">
+            <div className="parents">
+                {parents}
+            </div>
+            <div className="peers">
+                {peers}
+            </div> 
+            <div className="children">
+                {subordinates}
+            </div>
         </div>
       </div>
     )

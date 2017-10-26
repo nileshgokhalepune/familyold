@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 
 export class Member extends Component {
-  constructor(props) {
-    super(props);
-  }
 
   render() {
     let display = '';
@@ -11,12 +8,17 @@ export class Member extends Component {
     if (type === 'self') {
       display = 'You'
     } else {
-        display = 'Your ' + this.props.value.relation;
+      display = 'Your '; // + this.props.value.relation;
     }
     return (
-      <div type="member">
-            <div class="name">{this.props.value.name}</div>
-            {display}
+      <div>
+        <div type="member">
+                <div className="name">{this.props.value.name}</div>
+                {display}
+        </div>
+        <div>
+            <i className="fa fa-list"></i>
+        </div>
       </div>
     )
   }
