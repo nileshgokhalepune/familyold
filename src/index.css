@@ -10,8 +10,8 @@ body {
   display: flex!important;
   flex-direction: row;
   height: 200px;
-  margin: 1pt;
-  border: 1px solid red;
+  margin: 10px;
+  padding: 10px;
 }
 
 .children{
@@ -19,22 +19,28 @@ body {
   flex-direction: row;
   height: 200px;
   margin: 10px;
-  border: 1px solid green;
+  padding: 10px;
 }
 
 .parents{
   display: flex!important;
   flex-direction: row;
   height: 200px;
-  margin: 1pt;
-  border: 1px solid darkblue;
+  margin: 10px;
+  padding: 10px;
 }
 [type="member"]{
   width: 100px;
   height: 100px;
-  margin: 0 10 10 0;
-  border: 1px solid #ff4f8a;
+  margin: 10 10 10 10;
+  padding: 10px;
+  border: 1px solid rgba(122, 77, 226, 0.74);
   border-radius: 50%;
+}
+
+
+[type="member"]:hover{
+  border: 3px solid rgba(89, 26, 236, 0.74);
 }
 
 input[type="text"]{
@@ -74,10 +80,36 @@ label > input {
   display: table;
 }
 
+.family-header{
+  display: inline;
+  text-align: center; 
+}
+
 .underliner{
   font-family: 'Times New Roman', Times, serif;
   font-weight: bold;
   font-size: 10px;
   background-color: darkblue;
   color:white;
+}
+
+.peeks{
+  margin: 3px;
+  padding: 3px;
+}
+
+i{
+  margin: 2px;
+}
+
+i:hover{
+  cursor: pointer;
+}
+
+.posts{
+  display: table-cell;
+}
+
+.member:hover{
+  cursor: pointer;
 }

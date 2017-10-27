@@ -4,6 +4,8 @@
   "private": true,
   "dependencies": {
     "bootstrap": "^3.3.7",
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
     "font-awesome": "^4.7.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",

@@ -1,47 +1,11 @@
 import React, { Component } from 'react';
-import { Member } from './Member';
+import { Member } from '../Member/Member';
+import { family } from '../../family';
 
 export class Board extends Component {
 
   componentWillMount() {
-    this.setState({
-      name: 'N',
-      relation: 'Self',
-      type: 'self',
-      family: [{
-        name: 'S',
-        relation: 'Father',
-        type: 'parent'
-      }, {
-        name: 'J',
-        relation: 'Mother',
-        type: 'parent'
-      }, {
-        name: 'P',
-        relation: 'Wife',
-        type: 'peer'
-      }, {
-        name: 'E',
-        relation: 'Daughter',
-        type: 'child'
-      }, {
-        name: 'R',
-        relation: 'Son',
-        type: 'child'
-      }, {
-        name: 'S',
-        relation: 'Sister',
-        type: 'peer'
-      }, {
-        name: 'D',
-        relation: 'Nephew',
-        type: 'child'
-      }, {
-        name: 'V',
-        relation: 'Aunt',
-        type: 'parent'
-      }]
-    });
+    this.setState(family);
   }
   constructor(props) {
     super(props);
@@ -62,13 +26,13 @@ export class Board extends Component {
     if (this.state) {
       let family = this.state.family;
       peers = family.map((f, i) => {
-        return f.type === this.peer ? <Member value={f} key={i} /> : '';
+        return f.type === this.peer ? <Member value={f} key={i} callbackPosts={(id) => alert('called' + id) }/> : '';
       });
       subordinates = family.map((f, i) => {
-        return f.type === this.children ? <Member value={f} key={i} /> : '';
+        return f.type === this.children ? <Member value={f} key={i} callbackPosts={(id) => alert('called' + id) }/> : '';
       });
       parents = family.map((f, i) => {
-        return f.type === this.parents ? <Member value={f} key={i} /> : '';
+        return f.type === this.parents ? <Member value={f} key={i} callbackPosts={(id) => alert('called' + id) }/> : '';
       });
     }
     return (
@@ -78,14 +42,26 @@ export class Board extends Component {
         </div>
         <div className="family">
             <div className="parents">
+                <div className="family-header">
+                    Your Elders
+                </div>
                 {parents}
             </div>
             <div className="peers">
+                <div className="family-header">
+                    Your Peers
+                </div>
                 {peers}
             </div> 
             <div className="children">
+                <div className="family-header">
+                    Your dependants
+                </div>
                 {subordinates}
             </div>
+        </div>
+        <div className="posts">
+            Here we show all the posts
         </div>
       </div>
     )

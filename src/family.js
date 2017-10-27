@@ -1,0 +1,47 @@
+export const family = {
+  name: 'N',
+  relation: 'Self',
+  type: 'self',
+  id: '1',
+  family: [{
+    name: 'S',
+    relation: 'Father',
+    type: 'parent',
+    id: '2'
+  }, {
+    name: 'J',
+    relation: 'Mother',
+    type: 'parent',
+    id: '3'
+  }, {
+    name: 'P',
+    relation: 'Wife',
+    type: 'peer',
+    id: '4'
+  }, {
+    name: 'E',
+    relation: 'Daughter',
+    type: 'child',
+    id: '5'
+  }, {
+    name: 'R',
+    relation: 'Son',
+    type: 'child',
+    id: '6'
+  }, {
+    name: 'S',
+    relation: 'Sister',
+    type: 'peer',
+    id: '7'
+  }, {
+    name: 'D',
+    relation: 'Nephew',
+    type: 'child',
+    id: '8'
+  }, {
+    name: 'V',
+    relation: 'Aunt',
+    type: 'parent',
+    id: '9'
+  }]
+};

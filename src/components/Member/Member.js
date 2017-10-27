@@ -2,6 +2,12 @@ import React, { Component } from 'react';
 
 export class Member extends Component {
 
+  showPosts(event) {
+    if (this.props.callbackPosts)
+      this.props.callbackPosts(this.props.value.id);
+  }
+
+  showLikes(event) {}
   render() {
     let display = '';
     let type = this.props.value.type;
@@ -10,15 +16,19 @@ export class Member extends Component {
     } else {
       display = 'Your '; // + this.props.value.relation;
     }
+
+    let showPeeks = type === 'self' ? '' : (
+      <div className="peeks">
+            <i title="Posts" className="fa fa-list" onClick={(event) => this.showPosts(event)}></i>
+        </div>);
+
     return (
-      <div>
+      <div className="member">
         <div type="member">
                 <div className="name">{this.props.value.name}</div>
                 {display}
         </div>
-        <div>
-            <i className="fa fa-list"></i>
-        </div>
+        {showPeeks}
       </div>
     )
   }
